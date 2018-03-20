@@ -1,0 +1,13 @@
+$neat-grid: (
+  columns: 12,
+  gutter: $gutter--default,
+);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,72 @@
+$menu-item--bg: $color__primary--darker;
+$menu-item--bg--hover: lighten($menu-item--bg, 20%);
+$menu-item--bg--active: lighten($menu-item--bg, 10%);
+
+$menu-item--sec--bg: maroon;
+$menu-item--sec--bg--hover: lighten($menu-item--sec--bg, 20%);
+$menu-item--sec--bg--active: lighten($menu-item--sec--bg, 10%);
+
+$menu-item--color: #fff;
+$menu-item--color--hover: #fff;
+
+@mixin menu-item {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@mixin menu-item--main {
+  display: block;
+  float: left;
+  margin: 0 2px 2px 0;
+}
+
+@mixin menu-item--typography {
+  > span,
+  > a {
+    display: block;
+    line-height: 1.2;
+    padding: 4px 7px;
+    color: $menu-item--color;
+    background-color: $menu-item--bg;
+    text-decoration: none;
+    &:hover {
+      color: $menu-item--color--hover;
+      background-color: $menu-item--bg--hover;
+    }
+  }
+}
+
+nav#block-mainmenu {
+
+  ul.menu {
+
+    font-size: 15px;
+    padding: 0;
+    margin: 2px 0 0 0;
+    list-style-type: none;
+
+    @include clearfix;
+
+    li.menu-item {
+      @include menu-item;
+      @include menu-item--typography;
+      &:hover {
+        background-color: $menu-item--bg--hover;
+      }
+    }
+
+    > li.menu-item {
+      @include menu-item--main;
+    }
+
+    ul.sub-nav {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      font-size: .9em;
+    }
+
+  }
+
+}

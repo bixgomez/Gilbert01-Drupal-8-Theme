@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function gilbert01_preprocess_html(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $variables['current_path'] = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+
+  $path_arr = explode('/', $variables['current_path']);
+  $this_action = end($path_arr);
+
+  if (($this_action == 'login') | ($this_action == 'edit') | ($this_action == 'add') | ($this_action == 'page')) {
+    $variables['is_admin_route'] = 'is-admin-route';
+  }
+  else {
+    $variables['is_admin_route'] = 'not-admin-route';
+  }
+
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    $variables['html_nid_class'] = 'html--nid-' . $node->id();
+    $variables['body_nid_class'] = 'body--nid-' . $node->id();
+    if ($node->id() == 21019) {
+      $variables['#attached']['library'][] = 'gilbert01/rjg-image-resizer--21019';
+    }
+    if ($node->id() == 21020) {
+      $variables['#attached']['library'][] = 'gilbert01/rjg-image-resizer--21020';
+    }
+  }
+}
+
+?>

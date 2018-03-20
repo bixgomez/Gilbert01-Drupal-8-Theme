@@ -1,0 +1,138 @@
+@mixin font-profile--base {
+  font-family: $base-font-family;
+  font-size: $body-font-size;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@mixin font-profile--heading {
+  font-family: $heading-font-family;
+  line-height: 1.25;
+  font-weight: 700;
+  color: $color__headline;
+}
+
+@mixin font-profile--subtitle {
+  font-family: $base-font-family;
+  font-weight: 300;
+}
+
+@mixin button-profile {
+  @include font-profile--heading;
+  display: inline-block;
+  line-height: 1;
+  color: $white;
+  background-color: $link-color;
+  padding: .5em .75em;
+
+  &:hover {
+    background-color: $link-color--hover;
+  }
+}
+
+@mixin clearfix {
+  &::before {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin font-size($size) {
+  @if $size == 'xs' {
+    font-size: $body-font-size * .8;
+  }
+  @elseif $size == 'sm' {
+    font-size: $body-font-size * .9;
+  }
+  @elseif $size == 'md' {
+    font-size: $body-font-size * 1.125;
+  }
+  @elseif $size == 'lg' {
+    font-size: $body-font-size * 1.5;
+  }
+  @elseif $size == 'xl' {
+    font-size: $body-font-size * 2;
+  }
+  @else {
+    font-size: $body-font-size;
+  }
+}
+
+//======================= Flex Container==================
+@mixin flex-container(
+  $justify-content: flex-start,
+  $align-content: space-between,
+  $flex-wrap: nowrap,
+  $align-items: flex-start) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: $flex-wrap;
+  justify-content: $justify-content;
+  align-content: $align-content;
+  align-items: $align-items;
+}
+
+//  Flex item
+@mixin flex-item($flex: 0 1 auto) {
+  // Define this value by default to avoid IE10 bug
+  flex: $flex;
+  align-self: auto;
+}
+
+//================== Buttons ========
+@mixin outline-button($icon-url: url("../../public/images/blue-right-arrow.svg") ) {
+  border-color: lighten($medium-gray, 20%);
+  border-radius: 0;
+  background-image: $icon-url;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 91% center;
+  padding-right: 30px;
+
+  &:hover,
+  &:focus {
+    border-color: lighten($color__primary--light, 28%);
+    background-color: lighten($color__primary--light, 32%);
+  }
+
+  a {
+    @include font-size(sm);
+    text-decoration: none;
+    color: $medium-gray;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
+
+// Main menu (dropdown) mixins
+@mixin main-menu-item--level-1 {
+  font-size: 1em;
+  padding: $menu-item--padding;
+  line-height: $menu-item--lineheight;
+  display: block;
+  margin: 0;
+  background-color: $color__primary;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    background-color: $color__primary--dark;
+  }
+}
+
+@mixin main-menu-item--level-2 {
+  @include main-menu-item--level-1;
+  background-color: lignten($color__primary, 10%);
+  &:hover {
+    background-color: lignten($color__primary--dark, 10%);
+  }
+}

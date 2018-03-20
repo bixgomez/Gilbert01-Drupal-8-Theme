@@ -1,0 +1,54 @@
+<div class="page-container">
+
+  {% if page.header %}
+    <div class="section-outer section-outer--header">
+      <header class="section section--header">
+        <div class="section-inner">
+          {{ page.header }}
+        </div>
+      </header>
+    </div>
+  {% endif %}
+
+  <div class="section-outer section-outer--navigation">
+    <div class="section section--navigation">
+      <div class="section-inner">
+        {{ page.navigation }}
+      </div>
+    </div>
+  </div>
+
+  {#
+  {% if page.info %}
+    <div class="section-outer section-outer--info">
+      <div class="section section--info">
+        <div class="section-inner">
+          {{ page.info }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  #}
+
+  <div class="section-outer section-outer--content">
+    <div class="section section--content">
+      <div class="section-inner">
+        <h1 class="page-title">{{ page['#title'] }}</h1>
+        {{ page.content|without('gilbert01_page_title') }}
+      </div>
+    </div>
+  </div>
+
+  {#
+  {% if page.footer %}
+    <div class="section-outer section-outer--footer">
+      <footer class="section section--footer">
+        <div class="section-inner">
+          {{ page.footer }}
+        </div>
+      </footer>
+    </div>
+  {% endif %}
+  #}
+
+</div>

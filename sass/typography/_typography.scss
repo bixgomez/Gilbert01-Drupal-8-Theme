@@ -1,0 +1,119 @@
+html {
+  font-size: $html-font-size;
+}
+
+body {
+  font-family: $base-font-family;
+  font-size: $body-font-size;
+  font-weight: 500;
+  line-height: $base-line-height;
+  color: $font-color--base;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  padding: 0;
+}
+
+p,
+.paragraph {
+  margin: 0 0 $paragraph-padding;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: $gutter--narrower;
+  color: $font-color--heading;
+}
+
+h2, h3, h4, h5 {
+  color: mix($font-color--heading, transparent, 80%);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  &.page-title {
+    margin: 0 0 ($paragraph-padding * .4);
+  }
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+li {
+  margin-bottom: $gutter--narrow;
+  &:last-child {
+    margin-bottom: $gutter--narrower;
+  }
+}
+
+$a-color: saturate($color__secondary, 100%);
+$a-color-hover: mix($a-color, transparent, 70%);
+a {
+  color: $a-color;
+  text-decoration: none;
+  &:hover {
+    color: $a-color-hover;
+    text-decoration: underline;
+  }
+}
+
+.site-name {
+  @extend h1;
+  line-height: 1;
+  font-size: $font-size-h1 * 2.25;
+  margin-bottom: .1em;
+  margin-left: -.05em;
+  a {
+    text-decoration: none;
+    color: $font-color--heading;
+  }
+}
+
+.site-slogan {
+  @extend h2;
+  font-size: 1.625em;
+  line-height: 1.2;
+  margin-bottom: .1em;
+}
+
+$threshold-px: 14px;
+$switch-point: $md;
+$vw-rate-up: 1.5vw;
+$vw-rate-down: 1.0vw;
+
+$up-size: baseFontSize($threshold-px, $switch-point, $vw-rate-up, 'add');
+$down-size: baseFontSize($threshold-px, $switch-point, $vw-rate-down, 'subtract');
+
+.section--content {
+  font-size: calc( #{$down-size} - #{$vw-rate-down} );
+
+  @include breakpoint($switch-point) {
+    font-size: calc( #{$up-size} + #{$vw-rate-up} );
+  }
+
+  @include breakpoint($max-site-width) {
+    font-size: calc( #{$up-size} + #{$max-site-width/100 * strip-unit($vw-rate-up)} );
+  }
+}
+
+.region-header {
+  font-size: calc( #{.5em} + #{.65vw} );
+  @include breakpoint($max-site-width) {
+    font-size: calc( #{.5em} + #{$max-site-width/100 * strip-unit(.65vw)} );
+  }
+}

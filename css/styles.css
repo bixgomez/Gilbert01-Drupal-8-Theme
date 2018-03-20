@@ -1,0 +1,583 @@
+/**
+ * Partial for adding standard breakpoint variables
+ */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700");
+@media (min-width: 0) {
+  .breakpoint-helper:after {
+    content: ' ($xxs)';
+  }
+}
+
+@media (min-width: 320px) {
+  .breakpoint-helper:after {
+    content: ' ($xs)';
+  }
+}
+
+@media (min-width: 544px) {
+  .breakpoint-helper:after {
+    content: ' ($sm)';
+  }
+}
+
+@media (min-width: 800px) {
+  .breakpoint-helper:after {
+    content: ' ($md)';
+  }
+}
+
+@media (min-width: 960px) {
+  .breakpoint-helper:after {
+    content: ' ($lg)';
+  }
+}
+
+@media (min-width: 1100px) {
+  .breakpoint-helper:after {
+    content: ' ($xl)';
+  }
+}
+
+.is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+body {
+  background-color: #fbfcfd;
+}
+
+/**
+ * @file
+ * Visual styles for tabs.
+ */
+div.tabs {
+  margin: 0;
+}
+
+ul.tabs {
+  list-style: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+.tabs > li {
+  display: inline-block;
+  margin: 0 0.3em 0 0;
+  /* LTR */
+}
+
+[dir="rtl"] .tabs > li {
+  margin-left: 0.3em;
+  margin-right: 0;
+}
+
+.tabs a {
+  display: block;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  background-color: #608fa9;
+  color: white;
+}
+
+.tabs a.is-active {
+  background-color: #81a6bb;
+  color: white;
+}
+
+.tabs a:focus,
+.tabs a:hover {
+  background-color: #a2becd;
+  color: #152128;
+}
+
+/**
+ * @file
+ * Styles for breadcrumbs.
+ */
+.breadcrumb {
+  padding-bottom: 0.5em;
+}
+
+.breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+
+[dir="rtl"] .breadcrumb ol {
+  /* This is required to win over specificity of [dir="rtl"] ol */
+  margin-right: 0;
+}
+
+.breadcrumb li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* IE8 does not support :not() and :last-child. */
+.breadcrumb li:before {
+  content: ' \BB ';
+}
+
+.breadcrumb li:first-child:before {
+  content: none;
+}
+
+.js-facets-checkbox-links {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.js-facets-checkbox-links.content-type {
+  margin-bottom: 0;
+}
+
+.js-facets-checkbox-links.media-type {
+  margin-top: 0;
+}
+
+.js-facets-checkbox-links .facet-item label {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#views-exposed-form-acquia-search-page {
+  margin-top: 10px;
+}
+
+#views-exposed-form-acquia-search-page .form-item-search {
+  display: inline-block;
+}
+
+#views-exposed-form-acquia-search-page .form-item-search label {
+  font-size: 1.5em;
+  font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+#views-exposed-form-acquia-search-page #edit-actions {
+  display: inline-block;
+}
+
+.form-item-sort-bef-combine {
+  display: table-row;
+  float: none !important;
+  margin-bottom: 1em;
+}
+
+.form-item-sort-bef-combine label {
+  display: table-cell;
+  padding-right: .5em;
+}
+
+.form-item-sort-bef-combine select {
+  display: table-cell;
+}
+
+/**
+ * @file
+ * Styles for system messages.
+ */
+.messages {
+  background: no-repeat 10px 17px;
+  /* LTR */
+  border: 1px solid;
+  border-width: 1px;
+  /* LTR */
+  border-radius: 2px;
+  padding: 0.75em;
+  /* LTR */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: 0.75em;
+}
+
+.messages + .messages {
+  margin-top: 1.538em;
+}
+
+[dir="rtl"] .messages {
+  border-width: 1px 0 1px 1px;
+  background-position: right 10px top 17px;
+  padding-left: 20px;
+  padding-right: 35px;
+  text-align: right;
+}
+
+.messages__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.messages__item + .messages__item {
+  margin-top: 0.769em;
+}
+
+/* See .color-success in Seven's colors.css */
+.messages--status {
+  color: #325e1c;
+  background-color: #f3faef;
+  border: 1px solid #c9e1bd;
+  /* LTR */
+  background-image: url(../../../../misc/icons/73b355/check.svg);
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+}
+
+[dir="rtl"] .messages--status {
+  border-color: #c9e1bd transparent #c9e1bd #c9e1bd;
+  -webkit-box-shadow: 8px 0 0 #77b259;
+          box-shadow: 8px 0 0 #77b259;
+  margin-left: 0;
+}
+
+/* See .color-warning in Seven's colors.css */
+.messages--warning {
+  background-color: #fdf8ed;
+  background-image: url(../../../../misc/icons/e29700/warning.svg);
+  border-color: #f4daa6 #f4daa6 #f4daa6 transparent;
+  /* LTR */
+  color: #734c00;
+  -webkit-box-shadow: -8px 0 0 #e09600;
+          box-shadow: -8px 0 0 #e09600;
+  /* LTR */
+}
+
+[dir="rtl"] .messages--warning {
+  border-color: #f4daa6 transparent #f4daa6 #f4daa6;
+  -webkit-box-shadow: 8px 0 0 #e09600;
+          box-shadow: 8px 0 0 #e09600;
+}
+
+/* See .color-error in Seven's colors.css */
+.messages--error {
+  background-color: #fcf4f2;
+  color: #a51b00;
+  background-image: url(../../../../misc/icons/e32700/error.svg);
+  border-color: #f9c9bf #f9c9bf #f9c9bf transparent;
+  /* LTR */
+  -webkit-box-shadow: -8px 0 0 #e62600;
+          box-shadow: -8px 0 0 #e62600;
+  /* LTR */
+}
+
+[dir="rtl"] .messages--error {
+  border-color: #f9c9bf transparent #f9c9bf #f9c9bf;
+  -webkit-box-shadow: 8px 0 0 #e62600;
+          box-shadow: 8px 0 0 #e62600;
+}
+
+.messages--error p.error {
+  color: #a51b00;
+}
+
+/**
+ * @file
+ * Utility classes to hide elements in different ways.
+ */
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be collapsible details that will be expanded with a click
+ * from a user. The effect of this class can be toggled with the jQuery show()
+ * and hide() functions.
+ */
+.hidden {
+  display: none;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen readers.
+ *
+ * Used for information required for screen reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+/**
+ * The .focusable class extends the .visually-hidden class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
+  width: auto;
+}
+
+/**
+ * Hide visually and from screen readers, but maintain layout.
+ */
+.invisible {
+  visibility: hidden;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-container {
+  padding: calc( 0.375em + 0.625vw);
+}
+
+@media (min-width: 1100px) {
+  .page-container {
+    padding: calc( 0.375em + 6.875px);
+  }
+}
+
+.section-outer {
+  background-color: #f2f2f2;
+  padding: 0.9em 0.975em;
+  margin-bottom: calc( 0.09375em + 0.625vw);
+  border-radius: 0.375em;
+  -webkit-box-shadow: inset 0 0 2em rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 0 2em rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1100px) {
+  .section-outer {
+    margin-bottom: calc( 0.09375em + 6.875px);
+  }
+}
+
+.not-admin-route .section-outer--info {
+  display: none;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+h1, .site-name, h2, .site-slogan, h3, h4, h5, p {
+  margin: 0;
+  padding: 0;
+}
+
+p,
+.paragraph {
+  margin: 0 0 1.5em;
+}
+
+h1, .site-name, h2, .site-slogan, h3, h4, h5 {
+  margin-bottom: 0.375em;
+  color: rgba(21, 33, 40, 0.9);
+}
+
+h2, .site-slogan, h3, h4, h5 {
+  color: rgba(21, 33, 39, 0.72);
+}
+
+h1, .site-name, h2, .site-slogan, h3, h4, h5 {
+  font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h1, .site-name {
+  font-size: 1.69em;
+}
+
+h1.page-title, .page-title.site-name {
+  margin: 0 0 0.6em;
+}
+
+h2, .site-slogan {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+li {
+  margin-bottom: 0.75em;
+}
+
+li:last-child {
+  margin-bottom: 0.375em;
+}
+
+a {
+  color: #000485;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(0, 4, 133, 0.7);
+  text-decoration: underline;
+}
+
+.site-name {
+  line-height: 1;
+  font-size: 3.8025em;
+  margin-bottom: .1em;
+  margin-left: -.05em;
+}
+
+.site-name a {
+  text-decoration: none;
+  color: rgba(21, 33, 40, 0.9);
+}
+
+.site-slogan {
+  font-size: 1.625em;
+  line-height: 1.2;
+  margin-bottom: .1em;
+}
+
+.section--content {
+  font-size: calc( 22px - 1vw);
+}
+
+@media (min-width: 800px) {
+  .section--content {
+    font-size: calc( 2px + 1.5vw);
+  }
+}
+
+@media (min-width: 1100px) {
+  .section--content {
+    font-size: calc( 2px + 16.5px);
+  }
+}
+
+.region-header {
+  font-size: calc( 0.5em + 0.65vw);
+}
+
+@media (min-width: 1100px) {
+  .region-header {
+    font-size: calc( 0.5em + 7.15px);
+  }
+}
+
+nav#block-mainmenu ul.menu {
+  font-size: 15px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  list-style-type: none;
+}
+
+nav#block-mainmenu ul.menu::before {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+nav#block-mainmenu ul.menu::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+nav#block-mainmenu ul.menu li.menu-item {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+nav#block-mainmenu ul.menu li.menu-item > span,
+nav#block-mainmenu ul.menu li.menu-item > a {
+  display: block;
+  line-height: 1.2;
+  padding: 4px 7px;
+  color: #fff;
+  background-color: #273d49;
+  text-decoration: none;
+}
+
+nav#block-mainmenu ul.menu li.menu-item > span:hover,
+nav#block-mainmenu ul.menu li.menu-item > a:hover {
+  color: #fff;
+  background-color: #4b748b;
+}
+
+nav#block-mainmenu ul.menu li.menu-item:hover {
+  background-color: #4b748b;
+}
+
+nav#block-mainmenu ul.menu > li.menu-item {
+  display: block;
+  float: left;
+  margin: 0 2px 2px 0;
+}
+
+nav#block-mainmenu ul.menu ul.sub-nav {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-size: .9em;
+}
+
+body.path-frontpage h1.page-title, body.path-frontpage .page-title.site-name {
+  display: none;
+}
+
+.paragraph--portfolio-item h4.paragraph-title {
+  font-size: 1.125em;
+  line-height: 1.2;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.paragraph--portfolio-item a.paragraph-link {
+  display: block;
+  margin-bottom: 0.375em;
+}
+
+hr.paragraph--simple-divider {
+  display: block;
+  margin: 0 auto 1.5em;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  border-left: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */

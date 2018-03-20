@@ -1,0 +1,18 @@
+@function baseFontSize($thresholdPx, $switchPoint, $vwRate, $operation) {
+
+  $fontsize: strip-unit($thresholdPx);
+  $breakpoint: strip-unit($switchPoint);
+  $viewportFactor: strip-unit($vwRate);
+
+  $fontsize-at-breakpoint: ($breakpoint * $viewportFactor) / 100;
+
+  @if $operation == 'add' {
+    $number: $fontsize - $fontsize-at-breakpoint;
+    @return #{$number}px;
+  }
+  @else {
+    $number: $fontsize + $fontsize-at-breakpoint;
+    @return #{$number}px;
+  }
+
+}

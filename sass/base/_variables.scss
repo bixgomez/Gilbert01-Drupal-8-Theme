@@ -1,0 +1,97 @@
+// Google font import
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+// @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700');
+// @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+// @import url('https://fonts.googleapis.com/css?family=BioRhyme:400,700');
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+// @import url('https://fonts.googleapis.com/css?family=Cabin');
+// @import url('https://fonts.googleapis.com/css?family=Handgloves');
+
+$base-font-choice: 'Open Sans';
+$heading-font-choice: 'Montserrat';
+
+$base-font-family: $base-font-choice, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$heading-font-family: $heading-font-choice, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+$gutter--default: 1.5em;
+$gutter--narrow: $gutter--default * .5;
+$gutter--narrower: $gutter--narrow * .5;
+$gutter--narrowest: $gutter--narrower * .5;
+$gutter--wide: $gutter--default * 1.5;
+$gutter--wider: $gutter--wide * 1.5;
+$gutter--widest: $gutter--wider * 1.5;
+
+$paragraph-padding: $gutter--default;
+
+
+// Monochrome colors.
+$light-gray: #ddd;
+$medium-gray: #888;
+$dark-gray: #333;
+$white: #fff;
+$black: #000;
+
+$color__primary: #4b748b;
+$color__secondary: #303155;
+
+$color__primary--light: lighten($color__primary, 10%);
+$color__primary--lighter: lighten($color__primary--light, 10%);
+$color__primary--lightest: lighten($color__primary--lighter, 10%);
+$color__primary--dark: darken($color__primary, 10%);
+$color__primary--darker: darken($color__primary--dark, 10%);
+$color__primary--darkest: darken($color__primary--darker, 10%);
+
+$color__headline: desaturate($color__primary, 55%);
+$color__headline: mix($color__headline, white, 75%);
+
+$color__secondary--light: lighten($color__secondary, 10%);
+$color__secondary--lighter: lighten($color__secondary--light, 10%);
+$color__secondary--lightest: lighten($color__secondary--lighter, 10%);
+$color__secondary--dark: darken($color__secondary, 10%);
+$color__secondary--darker: darken($color__secondary--dark, 10%);
+$color__secondary--darkest: darken($color__secondary--darker, 10%);
+
+$link-color: $color__secondary;
+$link-color--hover: $color__secondary--light;
+
+$body-bg-color: mix($white, $color__primary, 98%);
+$section-bg-color: mix($black, $white, 5%);
+
+
+// Font sizing.
+$html-font-size: 16px;
+$body-font-size: 1em;
+$base-line-height: 1.6;
+$heading-line-height: 1.2;
+
+$font-size-h4: $body-font-size;
+$font-size-h3: $font-size-h4 * 1.3;
+$font-size-h2: $font-size-h4 * 1.3;
+$font-size-h1: $font-size-h2 * 1.3;
+
+
+// Font colors.
+$font-color--base: mix($black, transparent, 80%);
+$font-color--heading: mix($color__primary--darkest, transparent, 90%);
+
+
+// Main menu (dropdown) variables.
+$menu-item--fontsize: 1.125em;
+$menu-item--lineheight: $menu-item--fontsize * 1.2;
+
+$menu-item--pad-t: $menu-item--fontsize * .35;
+$menu-item--pad-r: $menu-item--pad-t * 1.125;
+$menu-item--pad-b: $menu-item--pad-t;
+$menu-item--padding: $menu-item--pad-t $menu-item--pad-r $menu-item--pad-b;
+
+$menu-item--margin: $menu-item--fontsize * .5;
+
+$menu-item-caret--top: $menu-item--fontsize * .35;
+$menu-item-caret--margin-l: $menu-item--fontsize * .5;
+$menu-item-caret--margin-b: $menu-item--fontsize * .05;
+
+$menu-height: $menu-item--lineheight + $menu-item--pad-t + $menu-item--pad-b;
+
+$menu-system-margin-top: $menu-item--fontsize * .5;
+$menu-system-margin-left: $menu-item--fontsize * .5;

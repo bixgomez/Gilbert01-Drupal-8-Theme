@@ -1,0 +1,43 @@
+/**
+ * @file
+ * Visual styles for tabs.
+ */
+
+div.tabs {
+  margin: 0;
+}
+
+ul.tabs {
+  list-style: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+.tabs > li {
+  display: inline-block;
+  margin: 0 0.3em 0 0; /* LTR */
+}
+
+[dir="rtl"] .tabs > li {
+  margin-left: 0.3em;
+  margin-right: 0;
+}
+
+.tabs a {
+  display: block;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  background-color: $color__primary--light;
+  color: white;
+}
+
+.tabs a.is-active {
+  background-color: $color__primary--lighter;
+  color: white;
+}
+
+.tabs a:focus,
+.tabs a:hover {
+  background-color: $color__primary--lightest;
+  color: $color__primary--darkest;
+}

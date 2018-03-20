@@ -1,0 +1,18 @@
+global-styling:
+  css:
+    component:
+      css/styles.css: {}
+
+rjg-image-resizer--21019:
+  version: 1.x
+  js:
+    js/rjg-image-resizer--21019.js: {}
+  dependencies:
+    - core/jquery
+
+rjg-image-resizer--21020:
+  version: 1.x
+  js:
+    js/rjg-image-resizer--21020.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,22 @@
+name: Gilbert 01 Theme
+type: theme
+description: Gilbert 01 Theme
+core: 8.x
+base theme: stable
+
+libraries:
+  - gilbert01/global-styling
+
+regions:
+  header: 'Header'
+  navigation: 'Navigation'
+  info: 'Info'
+  content: 'Content'
+  footer: 'Footer'
+
+ckeditor_stylesheets:
+  - css/components/ckeditor.css
+
+# Image appears on admin/appearance
+screenshot: screenshot.png
+

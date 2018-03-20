@@ -1,0 +1,53 @@
+.js-facets-checkbox-links {
+  list-style-type: none;
+  padding-left: 0;
+
+  &.content-type {
+    margin-bottom: 0;
+  }
+
+  &.media-type {
+    margin-top: 0;
+  }
+
+  .facet-item {
+    label {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+}
+
+#views-exposed-form-acquia-search-page {
+  margin-top: 10px;
+
+  .form-item-search {
+    display: inline-block;
+
+    label {
+      @include font-size(lg);
+      font-family: $heading-font-family;
+      font-weight: 700;
+      font-size: 1.5em;
+    }
+  }
+
+  #edit-actions {
+    display: inline-block;
+  }
+}
+
+.form-item-sort-bef-combine {
+  display: table-row;
+  float: none !important;
+  margin-bottom: 1em;
+
+  label {
+    display: table-cell;
+    padding-right: .5em;
+  }
+
+  select {
+    display: table-cell;
+  }
+}
